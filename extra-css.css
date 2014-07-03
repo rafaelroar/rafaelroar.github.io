@@ -1,7 +1,12 @@
 .custom-pic-container {
 	padding-top: 30px;
-    padding-right: 10px;
+    padding-right: 30px;
     padding-left: 30px; 
     margin-right: 0;
     margin-left: 0;
+}
+
+#custom-header {
+	padding-top: 30px;
+	padding-bottom: -10px;
 }
