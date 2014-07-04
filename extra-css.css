@@ -6,6 +6,10 @@
     margin-left: 0;
 }
 
+.custom-profile-pic-container {
+	padding-top: 200px;
+}
+
 #custom-header {
 	padding-top: 30px;
 	padding-bottom: -10px;
