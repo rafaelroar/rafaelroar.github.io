@@ -15,4 +15,4 @@ function publish() {
   input.value = "";
 }
 
-window.onload = enterAsClick;
+window.onload = enterAsClick();
