@@ -51,7 +51,6 @@ button {
     position: absolute;
 }
 #chat input {
-    margin-left: 75px;
     position: relative;
     top: 15px;
     width: 100%;
@@ -64,6 +63,6 @@ button {
 }
 #output {
     font-size: 1.2em;
-    margin: 0.6em;
+    /*margin: 0.6em;*/
     position: relative;
 }

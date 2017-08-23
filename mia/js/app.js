@@ -10,6 +10,6 @@
 function publish() {
   var output = document.getElementById("output");
   var input = document.getElementById("input");
-  output.innerHTML = "<p><span>" + input.value + "</span></p>" + output.innerHTML;
+  output.innerHTML = output.innerHTML + "<p><span>You: " + input.value + "</span></p>";
   input.value = "";
 }
