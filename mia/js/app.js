@@ -21,13 +21,25 @@ function publish() {
 
 function runMia(input) {
   console.log("run mia", input);
-  var promise = com.mia.Mia.sayHello(input);
-  promise.then(function(result) {
-    console.log("mia success", result);
-    setTimeout(miaPublish(result), 500);
-  }, function(err) {
-    console.log(err);
-  });
+  // var promise = com.mia.Mia.sayHello(input);
+  // promise.then(function(result) {
+  //   console.log("mia success", result);
+  //   setTimeout(miaPublish(result), 500);
+  // }, function(err) {
+  //   console.log(err);
+  // });
+  
+  JavaPoly.type("com.mia.Mia")
+    .then(function(mia) {
+      console.log("java poly", input);
+      var promise = mia.sayHello(input);
+      promise.then(function(result) {
+        console.log("mia success", result);
+        setTimeout(miaPublish(result), 500);
+      }, function(err) {
+        console.log(err);
+      });
+    });
   // $.ajax({
   //   type: "POST",
   //   url: "py/mia.py",
