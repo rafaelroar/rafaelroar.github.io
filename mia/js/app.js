@@ -20,8 +20,10 @@ function publish() {
 }
 
 function runMia(input) {
+  console.log("run mia", input);
   var promise = com.mia.Mia.sayHello(input);
   promise.then(function(result) {
+    console.log("mia success", result);
     setTimeout(miaPublish(result), 500);
   }, function(err) {
     console.log(err);
@@ -35,6 +37,7 @@ function runMia(input) {
 }
 
 function miaPublish(result) {
+  console.log("mia publish", result);
   var output = document.getElementById("output");
   output.innerHTML = output.innerHTML + `<p class="mia"><span>Mia: ` + result + "</span></p>";
   window.scrollTo(0, document.body.scrollHeight);
