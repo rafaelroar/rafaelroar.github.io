@@ -62,8 +62,8 @@ button {
     width: 100%;
 }
 #main {
-    margin-top: 58px;
     margin: 2em 1em 1em;
+    margin-top: 58px;
 }
 #main > p {
     color: #ce1126;
