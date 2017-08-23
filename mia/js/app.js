@@ -10,8 +10,10 @@
     var channel = 'mchat';
     
     // Assign a random avatar in random color
-    avatar.className = 'face-' + ((Math.random() * 13 + 1) >>> 0) + ' color-' + ((Math.random() * 10 + 1) >>> 0);
-    miaAvatar.className = 'face-' + ((Math.random() * 13 + 1) >>> 0) + ' color-' + ((Math.random() * 10 + 1) >>> 0);
+    var faceNumber = ((Math.random() * 12 + 1) >>> 0);
+    var colorNumber = ((Math.random() * 9 + 1) >>> 0);
+    avatar.className = 'face-' + faceNumber + ' color-' + colorNumber;
+    miaAvatar.className = 'face-' + faceNumber + 1 + ' color-' + colorNumber + 1;
 
     var p = PUBNUB.init({
         subscribe_key: 'sub-c-f762fb78-2724-11e4-a4df-02ee2ddab7fe',
@@ -56,7 +58,7 @@
     });
     
     miaP.bind('keyup', input, function(e) {
-        (e.keyCode || e.charCode) === 13 && publish()
+        (e.keyCode || e.charCode) === 13 && miaPublish()
     });
 
     p.bind('click', button, publish);
@@ -69,10 +71,13 @@
             message : {avatar: avatar.className, text: input.value}, 
             x : (input.value='')
         });
-        
+    }
+    
+    function miaPublish() {        
         miaP.publish({
             channel : channel, 
-            message : {avatar: avatar.className, text: "Hello"}
+            message : {avatar: miaAvatar.className, text: "Hello"},
+            x : (input.value='')
         });
     }
 
