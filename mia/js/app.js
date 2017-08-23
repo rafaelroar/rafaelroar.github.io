@@ -15,7 +15,7 @@ function publish() {
     output.innerHTML = output.innerHTML + `<p class="you"><span>You: ` + input.value + "</span></p>";
     input.value = "";
     window.scrollTo(0, document.body.scrollHeight);
-    setTimeout(miaPublish(), 1000);
+    setTimeout(miaPublish, 1000);
   }
 }
 
