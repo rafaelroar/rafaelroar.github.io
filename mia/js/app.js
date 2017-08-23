@@ -13,16 +13,35 @@ function publish() {
   var input = document.getElementById("input");
   if (input.value.length > 0) {
     output.innerHTML = output.innerHTML + `<p class="you"><span>You: ` + input.value + "</span></p>";
+    runMia(input.value);
     input.value = "";
     window.scrollTo(0, document.body.scrollHeight);
-    setTimeout(miaPublish, 1000);
   }
 }
 
-function miaPublish() {
+function runMia(input) {
+  var promise = com.mia.Mia.sayHello(input);
+  promise.then(function(result) {
+    setTimeout(miaPublish(result), 500);
+  }, function(err) {
+    console.log(err);
+  });
+  // $.ajax({
+  //   type: "POST",
+  //   url: "py/mia.py",
+  //   data: { param: input },
+  //   success: miaCallback
+  // });
+}
+
+function miaPublish(result) {
   var output = document.getElementById("output");
-  output.innerHTML = output.innerHTML + `<p class="mia"><span>Mia: ` + "Hello" + "</span></p>";
+  output.innerHTML = output.innerHTML + `<p class="mia"><span>Mia: ` + result + "</span></p>";
   window.scrollTo(0, document.body.scrollHeight);
 }
+
+// function miaCallback(response) {
+//   setTimeout(miaPublish(response), 1000);
+// }
 
 window.onload = enterAsClick();
