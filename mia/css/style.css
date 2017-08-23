@@ -11,12 +11,13 @@ body {
     background: #f9f9f9;
     color: #333;
 }
-header {
+.header {
     height: 58px;
     background: #fff;
     border-top: 4px solid #ce1126;
     border-bottom-color: #eee;
     position: fixed;
+    z-index: 10;
 }
 h1, h2, h3 {
     margin: 0;
