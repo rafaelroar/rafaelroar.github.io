@@ -1,11 +1,11 @@
-(function() {    
-  document.getElementById("input").addEventListener("keyup", function(e) {
-    e.preventDefault();
-    if (e.keyCode == 13) {
-      document.getElementById("button").click();
-    }
-  });
-})();
+// (function() {    
+//   document.getElementById("input").addEventListener("keyup", function(e) {
+//     //e.preventDefault();
+//     if (e.keyCode == 13) {
+//       document.getElementById("button").click();
+//     }
+//   });
+// })();
 
 function publish() {
   var output = document.getElementById("output");
