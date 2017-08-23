@@ -66,9 +66,9 @@ button {
     /*margin: 0.6em;*/
     position: relative;
 }
-#output > p {
-    color: #ce1126;
+p.you {
+    color: #393939;
 }
-.mia {
+p.mia {
     color: #3675a9;
 }
