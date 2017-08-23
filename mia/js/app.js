@@ -16,6 +16,13 @@ function publish() {
     input.value = "";
   }
   window.scrollTo(0, document.body.scrollHeight);
+  setTimeout(miaPublish(), 200);
+}
+
+function miaPublish() {
+  var output = document.getElementById("output");
+  output.innerHTML = output.innerHTML + "<p class='mia'><span>Mia: " + "Hello" + "</span></p>";
+  window.scrollTo(0, document.body.scrollHeight);
 }
 
 window.onload = enterAsClick();

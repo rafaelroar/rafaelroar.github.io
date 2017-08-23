@@ -52,10 +52,6 @@ button {
     height: 75px;
     position: relative;
 }
-#chat i {
-    font-size: 75px;
-    position: absolute;
-}
 #chat input {
     position: relative;
     top: 15px;
@@ -63,13 +59,16 @@ button {
 }
 #main {
     margin: 2em 1em 1em;
-    margin-top: 58px;
-}
-#main > p {
-    color: #ce1126;
+    margin-top: 100px;
 }
 #output {
     font-size: 1.2em;
     /*margin: 0.6em;*/
     position: relative;
+}
+#output > p {
+    color: #ce1126;
+}
+.mia {
+    color: #3675a9;
 }
