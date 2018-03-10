@@ -12,9 +12,10 @@ function publish() {
   var output = document.getElementById("output");
   var input = document.getElementById("input");
   if (input.value.length > 0) {
+    console.log("parseInt 1", input.value);
     var i = parseInt(input.value, 10);
-    console.log("parseInt", i);
-    if (!isNaN(i)) {
+    console.log("parseInt 2", i);
+    if (isNaN(i)) {
       if (i % 15 == 0) {
         output.innerHTML = output.innerHTML + `<p class="you"><span>Fizz Buzz</span></p>`;
       } else if (i % 3 == 0) {
