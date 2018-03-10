@@ -12,7 +12,7 @@ function publish() {
   var output = document.getElementById("output");
   var input = document.getElementById("input");
   if (input.value.length > 0) {
-    if (input.value === parseInt(input.value, 10)) {
+    if (isInt(input.value)) {
       var i = parseInt(input.value, 10);
       if (i % 15 == 0) {
         output.innerHTML = output.innerHTML + `<p class="you"><span>Fizz Buzz</span></p>`;
@@ -31,6 +31,12 @@ function publish() {
     input.value = "";
     window.scrollTo(0, document.body.scrollHeight);
   }
+}
+
+function isInt(value) {
+  return !isNaN(value) && 
+         parseInt(Number(value)) == value && 
+         !isNaN(parseInt(value, 10));
 }
 
 function runMia(input) {
