@@ -12,7 +12,7 @@ function publish() {
   var output = document.getElementById("output");
   var input = document.getElementById("input");
   if (input.value.length > 0) {
-    if (isInt(input.value)) {
+    if (!isInt(input.value)) {
       var i = parseInt(input.value, 10);
       if (i % 15 == 0) {
         output.innerHTML = output.innerHTML + `<p class="you"><span>Fizz Buzz</span></p>`;
