@@ -12,7 +12,21 @@ function publish() {
   var output = document.getElementById("output");
   var input = document.getElementById("input");
   if (input.value.length > 0) {
-    output.innerHTML = output.innerHTML + `<p class="you"><span>You: ` + input.value + "</span></p>";
+    if (input.value === parseInt(input.value, 10)) {
+      var i = parseInt(input.value, 10);
+      if (i % 15 == 0) {
+        output.innerHTML = output.innerHTML + `<p class="you"><span>Fizz Buzz</span></p>`;
+      } else if (i % 3 == 0) {
+        output.innerHTML = output.innerHTML + `<p class="you"><span>Fizz</span></p>`;
+      } else if (i % 5 == 0) {
+        output.innerHTML = output.innerHTML + `<p class="you"><span>Buzz</span></p>`;
+      } else {
+        output.innerHTML = output.innerHTML + `<p class="you"><span>` + i + "</span></p>";
+      }
+    } else {
+      output.innerHTML = output.innerHTML + `<p class="you"><span>Not an integer. Please input an integer number.</span></p>`;
+    }
+    
     runMia(input.value);
     input.value = "";
     window.scrollTo(0, document.body.scrollHeight);
